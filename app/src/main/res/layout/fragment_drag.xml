@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dragFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/target_glass"
+            android:layout_width="152dp"
+            android:layout_height="265dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.548"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.36"
+            app:srcCompat="@drawable/blank_glass" />
+
+        <ImageView
+            android:id="@+id/iv_move"
+            android:layout_width="129dp"
+            android:layout_height="232dp"
+            android:layout_marginStart="152dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/strawmojicocktail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/target_glass" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/startFragment">
+
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.cocktail_project.startFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectFragment"
+        android:name="com.example.cocktail_project.SelectFragment"
+        android:label="selectFragment"
+        tools:layout="@layout/fragment_select" >
+        <action
+            android:id="@+id/action_selectFragment_to_aloneFragment"
+            app:destination="@id/aloneFragment" />
+        <action
+            android:id="@+id/action_selectFragment_to_beginnerFragment"
+            app:destination="@id/beginnerFragment" />
+        <action
+            android:id="@+id/action_selectFragment_to_exoticFragment"
+            app:destination="@id/exoticFragment" />
+        <action
+            android:id="@+id/action_selectFragment_to_withfamilyFragment"
+            app:destination="@id/withfamilyFragment" />
+        <action
+            android:id="@+id/action_selectFragment_to_withloverFragment"
+            app:destination="@id/withloverFragment" />
+        <action
+            android:id="@+id/action_selectFragment_to_withfriendFragment"
+            app:destination="@id/withfriendFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aloneFragment"
+        android:name="com.example.cocktail_project.aloneFragment"
+        android:label="fragment_alone"
+        tools:layout="@layout/fragment_alone" >
+        <action
+            android:id="@+id/action_aloneFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/beginnerFragment"
+        android:name="com.example.cocktail_project.beginnerFragment"
+        android:label="fragment_beginner"
+        tools:layout="@layout/fragment_beginner" >
+        <action
+            android:id="@+id/action_beginnerFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exoticFragment"
+        android:name="com.example.cocktail_project.exoticFragment"
+        android:label="fragment_exotic"
+        tools:layout="@layout/fragment_exotic" >
+        <action
+            android:id="@+id/action_exoticFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/withfamilyFragment"
+        android:name="com.example.cocktail_project.withfamilyFragment"
+        android:label="fragment_withfamily"
+        tools:layout="@layout/fragment_withfamily" >
+        <action
+            android:id="@+id/action_withfamilyFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/withfriendFragment"
+        android:name="com.example.cocktail_project.withfriendFragment"
+        android:label="fragment_withfriend"
+        tools:layout="@layout/fragment_withfriend" >
+        <action
+            android:id="@+id/action_withfriendFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/withloverFragment"
+        android:name="com.example.cocktail_project.withloverFragment"
+        android:label="fragment_withlover"
+        tools:layout="@layout/fragment_withlover" >
+        <action
+            android:id="@+id/action_withloverFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.example.cocktail_project.RecipeFragment"
+        android:label="recipeFragment"
+        tools:layout="@layout/fragment_recipe" >
+        <action
+            android:id="@+id/action_recipeFragment_to_backgroundFragment"
+            app:destination="@id/backgroundFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.example.cocktail_project.SuccessFragment"
+        android:label="successFragment"
+        tools:layout="@layout/fragment_success" />
+    <fragment
+        android:id="@+id/shakeFragment"
+        android:name="com.example.cocktail_project.ShakeFragment"
+        android:label="shakeFragment"
+        tools:layout="@layout/fragment_shake" >
+        <action
+            android:id="@+id/action_shakeFragment_to_failFragment"
+            app:destination="@id/failFragment" />
+        <action
+            android:id="@+id/action_shakeFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/failFragment"
+        android:name="com.example.cocktail_project.FailFragment"
+        android:label="failFragment"
+        tools:layout="@layout/fragment_fail" />
+    <fragment
+        android:id="@+id/backgroundFragment"
+        android:name="com.example.cocktail_project.backgroundFragment"
+        android:label="backgroundFragment" >
+        <action
+            android:id="@+id/action_backgroundFragment_to_shakeFragment"
+            app:destination="@id/shakeFragment" />
+    </fragment>
+</navigation>
+
