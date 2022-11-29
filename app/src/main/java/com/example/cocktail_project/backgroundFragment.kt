@@ -140,7 +140,7 @@ class backgroundFragment : Fragment() {
                     // Turns off any color tints.
                     (v as? ImageView)?.clearColorFilter()
 
-                    (v as? ImageView)?.setImageResource(R.drawable.bloodycocktail)
+                    (v as? ImageView)?.setImageResource(R.drawable.step1glass)
 
                     // Invalidates the view to force a redraw.
                     v.invalidate()
