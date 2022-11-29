@@ -2,8 +2,10 @@ package com.example.cocktail_project
 
 import android.content.ClipData
 import android.content.ClipDescription
+import android.content.IntentSender.OnFinished
 import android.graphics.Color
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.text.TextUtils.replace
 import android.util.Log
 import android.view.DragEvent
@@ -20,20 +22,50 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
 import kotlinx.android.synthetic.main.fragment_background.*
+import android.os.Handler
+import android.os.Looper
 
 
 class backgroundFragment : Fragment() {
+
     lateinit var alcholFragment: AlcholFragment
     lateinit var drinkFragment: DrinkFragment
     lateinit var garnishFragment: GarnishFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            hintBox.visibility = View.INVISIBLE
+        },0L) // 처음에는 안뜨게 하기
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            hintBox.visibility = View.VISIBLE
+            Handler(Looper.getMainLooper()).postDelayed({
+                hintBox.visibility = View.INVISIBLE
+            },2500L) // 텍스트뷰 잠시 뜨는 시간
+        },10000L) // 지연시간
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            timerTxt.visibility = View.INVISIBLE
+        },10000L)
+
+
+        val countDown = object : CountDownTimer(10000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                timerTxt.setText("힌트 등장 " +millisUntilFinished / 1000 + "초 전" ).toString()
+            }
+            override fun onFinish() {
+                timerTxt.setText("힌트 없음").toString()
+                Handler(Looper.getMainLooper()).postDelayed({
+                    timerTxt.visibility = View.VISIBLE
+                },2500L)
+            }
+        }.start()
+
         alcholFragment = AlcholFragment()
         drinkFragment = DrinkFragment()
         garnishFragment = GarnishFragment()
-
-
     }
 
     override fun onCreateView(
@@ -47,10 +79,8 @@ class backgroundFragment : Fragment() {
         tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {
             }
-
             override fun onTabUnselected(tab: TabLayout.Tab?) {
             }
-
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when (tab?.position) {
                     0 -> {
@@ -140,7 +170,7 @@ class backgroundFragment : Fragment() {
                     // Turns off any color tints.
                     (v as? ImageView)?.clearColorFilter()
 
-                    (v as? ImageView)?.setImageResource(R.drawable.step1glass)
+                    (v as? ImageView)?.setImageResource(R.drawable.bloodycocktail)
 
                     // Invalidates the view to force a redraw.
                     v.invalidate()
