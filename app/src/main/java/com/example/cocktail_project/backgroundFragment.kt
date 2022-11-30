@@ -32,6 +32,7 @@ class backgroundFragment : Fragment() {
     lateinit var drinkFragment: DrinkFragment
     lateinit var garnishFragment: GarnishFragment
 
+    //힌트 기능 구현
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -68,6 +69,7 @@ class backgroundFragment : Fragment() {
         garnishFragment = GarnishFragment()
     }
 
+    //탭 레이아웃 구현
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -108,25 +110,24 @@ class backgroundFragment : Fragment() {
             }
         })
 
+        //드래그 앤 드롭 기능
         var target_glass = root_view.findViewById<ImageView>(R.id.glass1)
 
         target_glass.setOnDragListener { v, e ->
             when (e.action) {
-                DragEvent.ACTION_DRAG_STARTED -> {
-                    // Determines if this View can accept the dragged data.
+                DragEvent.ACTION_DRAG_STARTED -> { //드래그 시작 (이미지를 끌었을 때)
+                    // 드래그된 데이터를 accept 할 수 있는지 결정
                     if (e.clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
-                        // As an example of what your application might do, applies a blue color tint
-                        // to the View to indicate that it can accept data.
+                        //드래그 되었을 때 확인하기 위해서 넣은 배경 색
                         (v as? ImageView)?.setColorFilter(Color.BLUE)
                         Toast.makeText(this.context, "ACTION STARTED", Toast.LENGTH_LONG)
-                        // Invalidate the view to force a redraw in the new tint.
+                        // 다시 그리기 , 화면 갱신
                         v.invalidate()
 
-                        // Returns true to indicate that the View can accept the dragged data.
+                        //드래그 된 데이터 받았을 때 True
                         true
                     } else {
-                        // Returns false to indicate that, during the current drag and drop operation,
-                        // this View will not receive events again until ACTION_DRAG_ENDED is sent.
+                        //끄는중 false, END가 될 때까지 이벤트 다시 수신 X
                         false
                     }
                 }
