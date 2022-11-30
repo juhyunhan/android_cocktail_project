@@ -9,14 +9,14 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/blank_glass"
+        android:id="@+id/glass1"
         android:layout_width="152dp"
         android:layout_height="265dp"
         android:layout_marginTop="180dp"
         android:layout_marginEnd="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/blank_glass" />
+        app:srcCompat="@drawable/glass1" />
 
     <Button
         android:id="@+id/button_mix"
@@ -25,10 +25,10 @@
         android:backgroundTint="#C4D750"
         android:text="섞기"
         android:textColor="#636363"
-        app:layout_constraintBottom_toBottomOf="@+id/blank_glass"
-        app:layout_constraintEnd_toEndOf="@+id/blank_glass"
-        app:layout_constraintStart_toStartOf="@+id/blank_glass"
-        app:layout_constraintTop_toTopOf="@+id/blank_glass"
+        app:layout_constraintBottom_toBottomOf="@+id/glass1"
+        app:layout_constraintEnd_toEndOf="@+id/glass1"
+        app:layout_constraintStart_toStartOf="@+id/glass1"
+        app:layout_constraintTop_toTopOf="@+id/glass1"
         app:layout_constraintVertical_bias="0.493" />
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
-        android:text="알맞은 술을 선택하세요"
+        android:text="레시피에 맞는 재료를 선택하세요"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/blank_glass">
+        app:layout_constraintTop_toBottomOf="@id/glass1">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/alcholTab"
@@ -104,7 +104,7 @@
         android:text="hintBox"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/tab_layout"
-        app:layout_constraintEnd_toStartOf="@+id/blank_glass"
+        app:layout_constraintEnd_toStartOf="@+id/glass1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question_drink" />
 
@@ -114,7 +114,7 @@
         android:layout_height="wrap_content"
         android:text="timertxt"
         app:layout_constraintBottom_toTopOf="@+id/hintBox"
-        app:layout_constraintEnd_toStartOf="@+id/blank_glass"
+        app:layout_constraintEnd_toStartOf="@+id/glass1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question_drink" />
 
