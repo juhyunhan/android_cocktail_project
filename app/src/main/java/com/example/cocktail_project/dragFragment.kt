@@ -30,34 +30,29 @@ private class MyDragShadowBuilder1(v: View) : View.DragShadowBuilder(v) {
 
     private val shadow = ColorDrawable(Color.LTGRAY)
 
-    // Defines a callback that sends the drag shadow dimensions and touch point
-    // back to the system.
+    //드래그 그림자 크기 정하기
     override fun onProvideShadowMetrics(size: Point, touch: Point) {
 
-        // Set the width of the shadow to half the width of the original View.
         val width: Int = view.width / 2
 
-        // Set the height of the shadow to half the height of the original View.
         val height: Int = view.height / 2
 
-        // The drag shadow is a ColorDrawable. This sets its dimensions to be the
-        // same as the Canvas that the system provides. As a result, the drag shadow
-        // fills the Canvas.
+        // 드래그 섀도우는 ColorDrawable
+        // 캔버스 채우기
         shadow.setBounds(0, 0, width, height)
 
-        // Set the size parameter's width and height values. These get back to
-        // the system through the size parameter.
+        // 크기 매개변수의 너비와 높이 값을 설정
         size.set(width, height)
 
-        // Set the touch point's position to be in the middle of the drag shadow.
+        // 터치 포인트의 위치를 드래그 그림자의 중앙으로 설정
         touch.set(width / 2, height / 2)
     }
 
-    // Defines a callback that draws the drag shadow in a Canvas that the system
-    // constructs from the dimensions passed to onProvideShadowMetrics().
+    // 시스템이 캔버스에 끌기 그림자를 그리기
+    // onProvideShadowMetrics()에 전달된 rht==에서 구성
     override fun onDrawShadow(canvas: Canvas) {
 
-        // Draw the ColorDrawable on the Canvas passed in from the system.
+        //canvasa에 ColorDrawable을 그립니다.
         shadow.draw(canvas)
     }
 }
@@ -86,7 +81,7 @@ class dragFragment : Fragment() {
         img_view2.setOnDragListener { v, e ->
             when (e.action) {
                 DragEvent.ACTION_DRAG_STARTED -> {
-                    // Determines if this View can accept the dragged data.
+
                     if (e.clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
                         // As an example of what your application might do, applies a blue color tint
                         // to the View to indicate that it can accept data.

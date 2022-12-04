@@ -4,113 +4,141 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".selectFragment">
+    tools:context=".SelectFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btn_Exotic3"
-            android:layout_width="145dp"
-            android:layout_height="52dp"
-            android:backgroundTint="#C4D750"
-            android:text="#이색적인"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.093"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.396" />
-
         <TextView
             android:id="@+id/infoText3"
             android:layout_width="200dp"
             android:layout_height="44dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="80dp"
             android:text="오늘의 한잔은?"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.137"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.147" />
-
-        <Button
-            android:id="@+id/btn_beginner3"
-            android:layout_width="143dp"
-            android:layout_height="51dp"
-            android:backgroundTint="#C4D750"
-            android:text="#칵테일입문"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.925"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.501"
-            app:rippleColor="#FFFFFF" />
+            app:layout_constraintVertical_bias="0.009" />
 
         <Button
             android:id="@+id/btn_Family3"
-            android:layout_width="156dp"
-            android:layout_height="57dp"
-            android:backgroundTint="#C4D750"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#98CBFE"
             android:text="#가족과함께"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#757575"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_withFriend3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.91"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.28" />
+            app:layout_constraintTop_toBottomOf="@+id/infoText3" />
 
         <Button
             android:id="@+id/btn_withLover3"
-            android:layout_width="157dp"
-            android:layout_height="56dp"
-            android:backgroundTint="#C4D750"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#98CBFE"
             android:text="#연인과함께 "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.223"
+            android:textColor="#757575"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Exotic3"
+            app:layout_constraintEnd_toStartOf="@+id/btn_Family3"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.278"
+            app:layout_constraintTop_toBottomOf="@+id/infoText3"
+            app:rippleColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_alone3"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="40dp"
+            android:backgroundTint="#98CBFE"
+            android:text="#혼술"
+            android:textColor="#757575"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView8"
+            app:layout_constraintEnd_toStartOf="@+id/btn_beginner3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Exotic3" />
+
+        <Button
+            android:id="@+id/btn_Exotic3"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#98CBFE"
+            android:text="#이색적인"
+            android:textColor="#757575"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_alone3"
+            app:layout_constraintEnd_toStartOf="@+id/btn_withFriend3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_withLover3" />
+
+        <Button
+            android:id="@+id/btn_beginner3"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="#98CBFE"
+            android:text="#칵테일입문"
+            android:textColor="#757575"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_withFriend3"
             app:rippleColor="#FFFFFF" />
 
         <Button
             android:id="@+id/btn_withFriend3"
-            android:layout_width="142dp"
-            android:layout_height="51dp"
-            android:backgroundTint="#C4D750"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#98CBFE"
             android:text="#친구와함께"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#757575"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_beginner3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.747"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.397"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Family3"
             app:rippleColor="#FFFFFF" />
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="199dp"
-            android:layout_height="290dp"
-            android:layout_marginStart="240dp"
-            android:layout_marginTop="444dp"
+            android:layout_width="259dp"
+            android:layout_height="385dp"
+            android:layout_marginStart="148dp"
+            android:layout_marginTop="348dp"
+            android:alpha="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/selectimg" />
+            app:srcCompat="@drawable/cocktail_title2" />
 
-        <Button
-            android:id="@+id/btn_alone3"
-            android:layout_width="142dp"
-            android:layout_height="52dp"
-            android:backgroundTint="#C4D750"
-            android:text="#혼술"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.323"
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
+            android:src="@drawable/ic_baseline_arrow_back_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -26,7 +26,7 @@ class AlcholFragment : Fragment() {
 //        for card in car_views:
 //            card.apply{
 //
-//                ...
+//
 //            }
         card_view.apply{
             setOnLongClickListener { v ->

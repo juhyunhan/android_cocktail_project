@@ -4,25 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".backgroundFragment"
+    tools:layout="@layout/fragment_background"
     tools:layout_editor_absoluteX="-9dp"
-    tools:layout_editor_absoluteY="-14dp"
-    tools:context=".MainActivity">
+    tools:layout_editor_absoluteY="-14dp">
 
     <ImageView
         android:id="@+id/glass1"
         android:layout_width="152dp"
         android:layout_height="265dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="180dp"
-        android:layout_marginEnd="55dp"
+        android:layout_marginEnd="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/recipe"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/glass1" />
 
     <Button
-        android:id="@+id/button_mix"
+        android:id="@+id/btn_mix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#C4D750"
+        android:backgroundTint="#98CBFE"
         android:text="섞기"
         android:textColor="#636363"
         app:layout_constraintBottom_toBottomOf="@+id/glass1"
@@ -36,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
-        android:text="레시피에 맞는 재료를 선택하세요"
+        android:text="알맞은 술을 선택하세요"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +50,7 @@
         android:layout_width="119dp"
         android:layout_height="35dp"
         android:background="@drawable/round_background"
-        android:backgroundTint="#C4D651"
+        android:backgroundTint="#0000BCD4"
         android:gravity="center"
         android:text="고른 칵테일"
         android:textSize="20sp"
@@ -68,19 +71,19 @@
             android:id="@+id/alcholTab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="술"/>
+            android:text="술" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/drinkTab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="음료"/>
+            android:text="음료" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/garnishTab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="가니쉬"/>
+            android:text="가니쉬" />
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -96,27 +99,119 @@
 
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/hintBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <View
+        android:id="@+id/recipe"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/recipe_box"
-        android:text="hintBox"
-        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/tab_layout"
         app:layout_constraintEnd_toStartOf="@+id/glass1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question_drink" />
+        app:layout_constraintTop_toBottomOf="@+id/timerTxt"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/recipea"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="RECIPE"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/recipeb"
+        app:layout_constraintEnd_toEndOf="@id/recipe"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/recipe"
+        app:layout_constraintTop_toTopOf="@+id/recipe"
+        tools:layout_constraintTop_toBottomOf="@id/view" />
+
+    <TextView
+        android:id="@+id/recipeb"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="RECIPE"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/recipec"
+        app:layout_constraintEnd_toEndOf="@id/recipe"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@id/recipe"
+        app:layout_constraintTop_toBottomOf="@+id/recipea"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <TextView
+        android:id="@+id/reciped"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="RECIPE"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/recipe"
+        app:layout_constraintEnd_toEndOf="@id/recipe"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@+id/recipe"
+        app:layout_constraintTop_toBottomOf="@+id/recipec"
+        tools:layout_constraintBottom_toTopOf="@id/view" />
+
+    <TextView
+        android:id="@+id/recipec"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="RECIPE"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/reciped"
+        app:layout_constraintEnd_toEndOf="@id/recipe"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="@+id/recipe"
+        app:layout_constraintTop_toBottomOf="@+id/recipeb"
+        app:layout_constraintVertical_bias="0.906" />
+
 
     <TextView
         android:id="@+id/timerTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="timertxt"
-        app:layout_constraintBottom_toTopOf="@+id/hintBox"
+        android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/glass1"
+        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question_drink" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

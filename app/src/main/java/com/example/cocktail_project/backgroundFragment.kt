@@ -37,20 +37,31 @@ class backgroundFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            hintBox.visibility = View.INVISIBLE
+            recipe.visibility = View.INVISIBLE
+            recipea.visibility = View.INVISIBLE
+            recipeb.visibility = View.INVISIBLE
+            recipec.visibility = View.INVISIBLE
+            reciped.visibility = View.INVISIBLE
         },0L) // 처음에는 안뜨게 하기
 
         Handler(Looper.getMainLooper()).postDelayed({
-            hintBox.visibility = View.VISIBLE
+            recipe.visibility = View.VISIBLE
+            recipea.visibility = View.VISIBLE
+            recipeb.visibility = View.VISIBLE
+            recipec.visibility = View.VISIBLE
+            reciped.visibility = View.VISIBLE
             Handler(Looper.getMainLooper()).postDelayed({
-                hintBox.visibility = View.INVISIBLE
+                recipe.visibility = View.INVISIBLE
+                recipea.visibility = View.INVISIBLE
+                recipeb.visibility = View.INVISIBLE
+                recipec.visibility = View.INVISIBLE
+                reciped.visibility = View.INVISIBLE
             },2500L) // 텍스트뷰 잠시 뜨는 시간
         },10000L) // 지연시간
 
         Handler(Looper.getMainLooper()).postDelayed({
             timerTxt.visibility = View.INVISIBLE
         },10000L)
-
 
         val countDown = object : CountDownTimer(10000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
@@ -132,11 +143,10 @@ class backgroundFragment : Fragment() {
                     }
                 }
                 DragEvent.ACTION_DRAG_ENTERED -> {
-                    // Applies a green tint to the View.
                     (v as? ImageView)?.setColorFilter(Color.GREEN)
                     Toast.makeText(this.context, "Drag Entered", Toast.LENGTH_LONG)
 
-                    // Invalidates the view to force a redraw in the new tint.
+                    // 다시 그리기
                     v.invalidate()
 
                     // Returns true; the value is ignored.
@@ -144,50 +154,48 @@ class backgroundFragment : Fragment() {
                 }
 
                 DragEvent.ACTION_DRAG_LOCATION ->
-                    // Ignore the event.
+                    //이벤트 무시
                     true
 
                 DragEvent.ACTION_DRAG_EXITED -> {
-                    // Resets the color tint to blue.
+                    //파란색으로 재설정
                     (v as? ImageView)?.setColorFilter(Color.BLUE)
                     Toast.makeText(this.context, "Drag Exit", Toast.LENGTH_LONG)
 
-                    // Invalidates the view to force a redraw in the new tint.
+                    //뷰 리셋
                     v.invalidate()
 
-                    // Returns true; the value is ignored.
                     true
                 }
-                DragEvent.ACTION_DROP -> {
-                    // Gets the item containing the dragged data.
+                DragEvent.ACTION_DROP -> { //드랍했을 때
+                    //드래그 된 데이터가..포함한? 항목을 가져옴
                     val item: ClipData.Item = e.clipData.getItemAt(0)
 
-                    // Gets the text data from the item.
+                    //텍스트 데이터 갖고오기
                     val dragData = item.text
 
-                    // Displays a message containing the dragged data.
+                    // 드래그한 데이터가 포함된 메시지를 표시
                     Toast.makeText(this.context, "Dragged data $dragData", Toast.LENGTH_LONG).show()
 
-                    // Turns off any color tints.
+                    // 색조 끄끼
                     (v as? ImageView)?.clearColorFilter()
 
                     (v as? ImageView)?.setImageResource(R.drawable.glass2)
 
-                    // Invalidates the view to force a redraw.
                     v.invalidate()
 
-                    // Returns true. DragEvent.getResult() will return true.
+                    //DragEvent.getResult()는 true를 반환
                     true
                 }
 
                 DragEvent.ACTION_DRAG_ENDED -> {
-                    // Turns off any color tinting.
+                    //색조 clear
                     (v as? ImageView)?.clearColorFilter()
 
-                    // Invalidates the view to force a redraw.
+                    //리셋
                     v.invalidate()
 
-                    // Does a getResult(), and displays what happened.
+                    //getResult() 수행, 발생한 상황 표시
                     when(e.result) {
                         true ->
                             Toast.makeText(this.context, "The drop was handled.", Toast.LENGTH_LONG)
@@ -195,17 +203,16 @@ class backgroundFragment : Fragment() {
                             Toast.makeText(this.context, "The drop didn't work.", Toast.LENGTH_LONG)
                     }.show()
 
-                    // Returns true; the value is ignored.
+                //true 반환
                     true
                 }
                 else -> {
-                    // An unknown action type was received.
                     Log.e("DragDrop Example", "Unknown action type received by View.OnDragListener.")
                     false
                 }
             }
         }
-        // Inflate the layout for this fragment
+        //프래그먼트 레이아웃 확장
         return root_view
     }
 }

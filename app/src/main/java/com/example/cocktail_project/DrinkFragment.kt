@@ -5,16 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cocktail_project.databinding.FragmentDrinkBinding
-import com.example.cocktail_project.Item
-import com.example.cocktail_project.viewmodel.CocktailViewModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
 class DrinkFragment : Fragment() {
@@ -102,7 +98,6 @@ class DrinkFragment : Fragment() {
 
         val databas = Firebase.database
         val itemRef = databas.getReference("drink")
-        val arraylist = ArrayList<Item>()
 
 
         itemRef.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -113,12 +108,12 @@ class DrinkFragment : Fragment() {
                 //arraylist.clear()
                 //var item: Item
                 for (snapshot in dataSnapshot.children) {
-                    val item = snapshot.getValue<Item>()!!
+                    //val item = snapshot.getValue<Item>()!!
                     //val item = Item("51759725981598")
                     //println(item.uu())
-                    arraylist.add(item)
+                    //arraylist.add(item)
                 }
-                Adapter(arraylist).notifyDataSetChanged()
+                //Adapter(arraylist).notifyDataSetChanged()
                 //_binding?.recdrink?.adapter = Adapter(arraylist)
                 //Adapter(arraylist).notifyDataSetChanged()
 
@@ -138,7 +133,7 @@ class DrinkFragment : Fragment() {
         arraylist.add(Item("sssss"))*/
 
 
-        _binding?.recdrink?.adapter = Adapter(arraylist)
+        //_binding?.recdrink?.adapter = Adapter(arraylist)
         //Adapter(arraylist).notifyDataSetChanged()
         //_binding?.recdrink?.adapter = Adapter(arraylist)*/
 
