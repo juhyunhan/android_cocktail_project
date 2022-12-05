@@ -8,43 +8,30 @@
 
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/fail_image"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_challenge"
+        app:layout_constraintBottom_toTopOf="@+id/btn_pickcocktail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.856"
-        app:srcCompat="@drawable/blank_glass" />
+        app:layout_constraintVertical_bias="0.791"
+        app:srcCompat="@drawable/fail_glass" />
 
     <Button
         android:id="@+id/btn_pickcocktail"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="136dp"
         android:backgroundTint="#98CBFE"
         android:text="칵테일 고르기"
         android:textColor="@color/material_dynamic_neutral30"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_challenge"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="#98CBFE"
-        android:text="다시 도전"
-        android:textColor="@color/material_dynamic_neutral30"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_pickcocktail"
-        app:layout_constraintEnd_toEndOf="@+id/btn_pickcocktail"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btn_pickcocktail" />
 
     <TextView
         android:id="@+id/selected_cocktail_success"
@@ -53,7 +40,7 @@
         android:layout_marginTop="90dp"
         android:text="선택한 칵테일 만들기 실패"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/fail_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

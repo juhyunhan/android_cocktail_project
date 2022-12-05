@@ -2,28 +2,23 @@ package com.example.cocktail_project
 
 import android.content.ClipData
 import android.content.ClipDescription
-import android.content.IntentSender.OnFinished
-import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.text.TextUtils.replace
 import android.util.Log
 import android.view.DragEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.fragment.app.FragmentManager
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
 import kotlinx.android.synthetic.main.fragment_background.*
 import android.os.Handler
 import android.os.Looper
+import android.widget.Button
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 
 
 class backgroundFragment : Fragment() {
@@ -31,10 +26,23 @@ class backgroundFragment : Fragment() {
     lateinit var alcholFragment: AlcholFragment
     lateinit var drinkFragment: DrinkFragment
     lateinit var garnishFragment: GarnishFragment
-
+    lateinit var result : ArrayList<String>
+    lateinit var select_elements : ArrayList<String>
     //힌트 기능 구현
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        result = arguments?.getStringArrayList("testKey") as ArrayList<String>
+
+        select_elements = ArrayList()
+        select_elements.add(result.get(result.lastIndex))
+        select_elements.add(result.get(result.lastIndex - 1))
+
+        Log.d("LOG", result.get(result.lastIndex - 2))
+        if (result.get(result.lastIndex - 2) == "null"){
+            Log.d("LOG", "the cocktail elements has null")
+            result.removeAt(result.lastIndex - 2)
+            Log.d("LOG", "after null clean $result")
+        }
 
         Handler(Looper.getMainLooper()).postDelayed({
             recipe.visibility = View.INVISIBLE
@@ -88,7 +96,6 @@ class backgroundFragment : Fragment() {
         var root_view = inflater.inflate(R.layout.fragment_background, container, false)
         var tab_layout = root_view.findViewById<TabLayout>(R.id.tab_layout)
         parentFragmentManager.beginTransaction().replace(R.id.frame_layout, alcholFragment).commit() //첫 Fragment
-
         tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {
             }
@@ -130,7 +137,7 @@ class backgroundFragment : Fragment() {
                     // 드래그된 데이터를 accept 할 수 있는지 결정
                     if (e.clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
                         //드래그 되었을 때 확인하기 위해서 넣은 배경 색
-                        (v as? ImageView)?.setColorFilter(Color.BLUE)
+                        //(v as? ImageView)?.setColorFilter(Color.BLUE)
                         Toast.makeText(this.context, "ACTION STARTED", Toast.LENGTH_LONG)
                         // 다시 그리기 , 화면 갱신
                         v.invalidate()
@@ -143,7 +150,9 @@ class backgroundFragment : Fragment() {
                     }
                 }
                 DragEvent.ACTION_DRAG_ENTERED -> {
-                    (v as? ImageView)?.setColorFilter(Color.GREEN)
+//                    (v as? ImageView)?.setColorFilter(Color.GREEN)
+                    (v as? ImageView)?.alpha = 0.5F
+
                     Toast.makeText(this.context, "Drag Entered", Toast.LENGTH_LONG)
 
                     // 다시 그리기
@@ -159,7 +168,9 @@ class backgroundFragment : Fragment() {
 
                 DragEvent.ACTION_DRAG_EXITED -> {
                     //파란색으로 재설정
-                    (v as? ImageView)?.setColorFilter(Color.BLUE)
+                    //(v as? ImageView)?.setColorFilter(Color.BLUE)
+                    (v as? ImageView)?.alpha = 1.0F
+
                     Toast.makeText(this.context, "Drag Exit", Toast.LENGTH_LONG)
 
                     //뷰 리셋
@@ -175,13 +186,33 @@ class backgroundFragment : Fragment() {
                     val dragData = item.text
 
                     // 드래그한 데이터가 포함된 메시지를 표시
-                    Toast.makeText(this.context, "Dragged data $dragData", Toast.LENGTH_LONG).show()
+                    var flag = false
+                    select_elements.add(dragData.toString())
+                    for (test_string in result) {
+                        Log.d("LOG", test_string)
+                        var drag_data = dragData.toString()
+                        if (drag_data == test_string) {
+                            Log.d("LOG", "$test_string is same to $dragData")
+                        }
+                    }
+                    Log.d("LOG", "selected elements : $select_elements")
+                    Log.d("LOG", "cocktail elements : $result")
 
-                    // 색조 끄끼
-                    (v as? ImageView)?.clearColorFilter()
 
-                    (v as? ImageView)?.setImageResource(R.drawable.glass2)
+//                    Toast.makeText(this.context, "Dragged data $dragData", Toast.LENGTH_LONG).show()
+//                    Toast.makeText(this.context, "Dragged data $test_string", Toast.LENGTH_LONG).show()
 
+
+                    if (select_elements.size == 3)
+                        (v as? ImageView)?.setImageResource(R.drawable.second_glass)
+                    if (select_elements.size == 4)
+                        (v as? ImageView)?.setImageResource(R.drawable.third_glass)
+                    if (select_elements.size == 5)
+                        (v as? ImageView)?.setImageResource(R.drawable.fourth_glass)
+                    if (select_elements.size == 6)
+                        (v as? ImageView)?.setImageResource(R.drawable.fifth_glass)
+
+                    (v as? ImageView)?.alpha = 1.0F
                     v.invalidate()
 
                     //DragEvent.getResult()는 true를 반환
@@ -196,12 +227,12 @@ class backgroundFragment : Fragment() {
                     v.invalidate()
 
                     //getResult() 수행, 발생한 상황 표시
-                    when(e.result) {
-                        true ->
-                            Toast.makeText(this.context, "The drop was handled.", Toast.LENGTH_LONG)
-                        else ->
-                            Toast.makeText(this.context, "The drop didn't work.", Toast.LENGTH_LONG)
-                    }.show()
+//                    when(e.result) {
+//                        true ->
+//                            Toast.makeText(this.context, "The drop was handled.", Toast.LENGTH_LONG)
+//                        else ->
+//                            Toast.makeText(this.context, "The drop didn't work.", Toast.LENGTH_LONG)
+//                    }.show()
 
                 //true 반환
                     true
@@ -211,6 +242,45 @@ class backgroundFragment : Fragment() {
                     false
                 }
             }
+        }
+
+        var shakebutton = root_view.findViewById<Button>(R.id.btn_mix)
+        shakebutton.setOnClickListener {
+            var check = true
+            Log.d("LOG", "click mix button, check elements.")
+            Log.d("LOG", "selected elements : $select_elements")
+            Log.d("LOG", "cocktail elements : $result")
+            if (select_elements.size != result.size){
+                check = false
+            }
+            else {
+                for (element in result) {
+                    var check2 = false
+                    for (select_element in select_elements) {
+                        if (element == select_element) check2 = true
+                    }
+                    if (check2 == false) {
+                        check = false
+                        break
+                    }
+                }
+            }
+
+            var bundle_result = ArrayList<String>()
+            if (check == true){
+                Log.d("LOG", "Right Element Select !! good job")
+                bundle_result.add("True")
+            }
+            else {
+                Log.d("LOG", "Wrong Element select ..")
+                bundle_result.add("False")
+            }
+            bundle_result.add(result.get(result.lastIndex - 1))
+            bundle_result.add(result.get(result.lastIndex))
+            val bundle = bundleOf("background2shake" to bundle_result)
+
+            findNavController().navigate(R.id.action_backgroundFragment_to_shakeFragment, bundle)
+
         }
         //프래그먼트 레이아웃 확장
         return root_view

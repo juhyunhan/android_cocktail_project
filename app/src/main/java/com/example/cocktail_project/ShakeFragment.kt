@@ -1,10 +1,14 @@
 package com.example.cocktail_project
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,13 +24,11 @@ class ShakeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var result : ArrayList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        result = arguments?.getStringArrayList("background2shake") as ArrayList<String>
     }
 
     override fun onCreateView(
@@ -34,7 +36,25 @@ class ShakeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shake, container, false)
+        val root_view = inflater.inflate(R.layout.fragment_shake, container, false)
+        var shakebutton = root_view.findViewById<Button>(R.id.result_btn)
+        shakebutton.setOnClickListener {
+            var success = result.get(0)
+            Log.d("ON SHAKE", success)
+
+            var final_result = ArrayList<String>()
+            final_result.add(result.get(1)) //name data
+            final_result.add(result.get(2)) //firebase data
+            val bundle = bundleOf("final" to final_result)
+            if (success == "True"){
+                findNavController().navigate(R.id.action_shakeFragment_to_successFragment, bundle)
+            }
+
+            else {
+                findNavController().navigate(R.id.action_shakeFragment_to_failFragment)
+            }
+        }
+        return root_view
     }
 
     companion object {

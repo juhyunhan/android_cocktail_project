@@ -124,7 +124,11 @@
         android:id="@+id/failFragment"
         android:name="com.example.cocktail_project.FailFragment"
         android:label="failFragment"
-        tools:layout="@layout/fragment_fail" />
+        tools:layout="@layout/fragment_fail" >
+        <action
+            android:id="@+id/action_failFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
+    </fragment>
     <fragment
         android:id="@+id/backgroundFragment"
         android:name="com.example.cocktail_project.backgroundFragment"
