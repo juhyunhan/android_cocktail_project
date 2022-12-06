@@ -63,7 +63,7 @@ class RecipeFragment : Fragment() {
             cocktail_element.add(viewModel.d.value.toString())
             cocktail_element.add(viewModel.name.value.toString())
             cocktail_element.add(viewModel.p.value.toString())
-            val bundle = bundleOf("testKey" to cocktail_element)
+            val bundle = bundleOf("recipe2background" to cocktail_element)
             findNavController().navigate(R.id.action_recipeFragment_to_backgroundFragment, bundle)
         }
         binding?.btnHome?.setOnClickListener {

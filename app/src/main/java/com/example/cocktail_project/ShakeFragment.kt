@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 
 class ShakeFragment : Fragment() {
 
@@ -25,8 +27,14 @@ class ShakeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val root_view = inflater.inflate(R.layout.fragment_shake, container, false)
-        var shakebutton = root_view.findViewById<Button>(R.id.result_btn)
-        shakebutton.setOnClickListener {
+        var gif_show = root_view.findViewById<ImageView>(R.id.shake_view)
+        var gif_source = R.drawable.shake_sy
+        Glide.with(this)
+            .load(gif_source)
+            .into(gif_show)
+
+        var resultbutton = root_view.findViewById<Button>(R.id.result_btn)
+        resultbutton.setOnClickListener {
             var success = result.get(0)
             Log.d("ON SHAKE", success)
 

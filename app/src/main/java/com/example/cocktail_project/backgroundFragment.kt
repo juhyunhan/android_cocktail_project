@@ -32,57 +32,57 @@ class backgroundFragment : Fragment() {
     //힌트 기능 구현
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        result = arguments?.getStringArrayList("testKey") as ArrayList<String>
+        result = arguments?.getStringArrayList("recipe2background") as ArrayList<String>
 
         select_elements = ArrayList()
-        select_elements.add(result.get(result.lastIndex))
-        select_elements.add(result.get(result.lastIndex - 1))
+        select_elements.add(result.get(result.lastIndex)) //firebase 사진 uri
+        select_elements.add(result.get(result.lastIndex - 1)) //칵테일 이름
 
         Log.d("LOG", result.get(result.lastIndex - 2))
-        if (result.get(result.lastIndex - 2) == "null"){
+        if (result.get(result.lastIndex - 2) == "null"){ //재료가 3개인 칵테일의 경우 마지막 null 값 제거
             Log.d("LOG", "the cocktail elements has null")
             result.removeAt(result.lastIndex - 2)
             Log.d("LOG", "after null clean $result")
         }
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            recipe.visibility = View.INVISIBLE
-            recipea.visibility = View.INVISIBLE
-            recipeb.visibility = View.INVISIBLE
-            recipec.visibility = View.INVISIBLE
-            reciped.visibility = View.INVISIBLE
-        },0L) // 처음에는 안뜨게 하기
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            recipe.visibility = View.INVISIBLE
+//            recipea.visibility = View.INVISIBLE
+//            recipeb.visibility = View.INVISIBLE
+//            recipec.visibility = View.INVISIBLE
+//            reciped.visibility = View.INVISIBLE
+//        },0L) // 처음에는 안뜨게 하기
+//
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            recipe.visibility = View.VISIBLE
+//            recipea.visibility = View.VISIBLE
+//            recipeb.visibility = View.VISIBLE
+//            recipec.visibility = View.VISIBLE
+//            reciped.visibility = View.VISIBLE
+//            Handler(Looper.getMainLooper()).postDelayed({
+//                recipe.visibility = View.INVISIBLE
+//                recipea.visibility = View.INVISIBLE
+//                recipeb.visibility = View.INVISIBLE
+//                recipec.visibility = View.INVISIBLE
+//                reciped.visibility = View.INVISIBLE
+//            },2500L) // 텍스트뷰 잠시 뜨는 시간
+//        },10000L) // 지연시간
+//
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            timerTxt.visibility = View.INVISIBLE
+//        },10000L)
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            recipe.visibility = View.VISIBLE
-            recipea.visibility = View.VISIBLE
-            recipeb.visibility = View.VISIBLE
-            recipec.visibility = View.VISIBLE
-            reciped.visibility = View.VISIBLE
-            Handler(Looper.getMainLooper()).postDelayed({
-                recipe.visibility = View.INVISIBLE
-                recipea.visibility = View.INVISIBLE
-                recipeb.visibility = View.INVISIBLE
-                recipec.visibility = View.INVISIBLE
-                reciped.visibility = View.INVISIBLE
-            },2500L) // 텍스트뷰 잠시 뜨는 시간
-        },10000L) // 지연시간
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            timerTxt.visibility = View.INVISIBLE
-        },10000L)
-
-        val countDown = object : CountDownTimer(10000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                timerTxt.setText("힌트 등장 " +millisUntilFinished / 1000 + "초 전" ).toString()
-            }
-            override fun onFinish() {
-                timerTxt.setText("힌트 없음").toString()
-                Handler(Looper.getMainLooper()).postDelayed({
-                    timerTxt.visibility = View.VISIBLE
-                },2500L)
-            }
-        }.start()
+//        val countDown = object : CountDownTimer(10000, 1000) {
+//            override fun onTick(millisUntilFinished: Long) {
+//                timerTxt.setText("힌트 등장 " +millisUntilFinished / 1000 + "초 전" ).toString()
+//            }
+//            override fun onFinish() {
+//                timerTxt.setText("힌트 없음").toString()
+//                Handler(Looper.getMainLooper()).postDelayed({
+//                    timerTxt.visibility = View.VISIBLE
+//                },2500L)
+//            }
+//        }.start()
 
         alcholFragment = AlcholFragment()
         drinkFragment = DrinkFragment()
@@ -187,7 +187,6 @@ class backgroundFragment : Fragment() {
                     val dragData = item.text
 
                     // 드래그한 데이터가 포함된 메시지를 표시
-                    var flag = false
                     select_elements.add(dragData.toString())
                     for (test_string in result) {
                         Log.d("LOG", test_string)
@@ -245,16 +244,16 @@ class backgroundFragment : Fragment() {
             }
         }
 
-        var shakebutton = root_view.findViewById<Button>(R.id.btn_mix)
+        val shakebutton = root_view.findViewById<Button>(R.id.btn_mix)
         shakebutton.setOnClickListener {
             var check = true
             Log.d("LOG", "click mix button, check elements.")
             Log.d("LOG", "selected elements : $select_elements")
             Log.d("LOG", "cocktail elements : $result")
-            if (select_elements.size != result.size){
+            if (select_elements.size != result.size){ //선택의 개수가 다른 경우
                 check = false
             }
-            else {
+            else { //선택의 개수가 같은경우 제대로 된 재료를 선택 했는지 확인
                 for (element in result) {
                     var check2 = false
                     for (select_element in select_elements) {
@@ -276,8 +275,8 @@ class backgroundFragment : Fragment() {
                 Log.d("LOG", "Wrong Element select ..")
                 bundle_result.add("False")
             }
-            bundle_result.add(result.get(result.lastIndex - 1))
-            bundle_result.add(result.get(result.lastIndex))
+            bundle_result.add(result.get(result.lastIndex - 1)) //선택했던 칵태일 이름
+            bundle_result.add(result.get(result.lastIndex)) //선택했던 칵테일 파베 주소
             val bundle = bundleOf("background2shake" to bundle_result)
 
             findNavController().navigate(R.id.action_backgroundFragment_to_shakeFragment, bundle)

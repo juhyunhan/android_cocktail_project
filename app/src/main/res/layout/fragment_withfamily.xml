@@ -1,154 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".withfamilyFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/chk_pear4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="배 벨리니"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/chk_straw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_pear"
+        app:layout_constraintVertical_bias="0.527" />
 
-        <TextView
-            android:id="@+id/chk_pear4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="배 벨리니"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/chk_straw"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.744"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_pear"
-            app:layout_constraintVertical_bias="0.527" />
+    <TextView
+        android:id="@+id/textwithfamily3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="#가족과 함께"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textwithfamily3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            android:text="#가족과 함께"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/chk_water3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="워터멜론 마틴"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/chk_strawmoji"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.216"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_water" />
 
-        <TextView
-            android:id="@+id/chk_water3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="워터멜론 마틴"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/chk_strawmoji"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.216"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_water" />
+    <ImageButton
+        android:id="@+id/chk_straw"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginEnd="44dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_pear"
+        app:layout_constraintVertical_bias="0.488"
+        app:srcCompat="@drawable/strawmojicocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_straw"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginEnd="44dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_pear"
-            app:layout_constraintVertical_bias="0.488"
-            app:srcCompat="@drawable/strawmojicocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <TextView
+        android:id="@+id/chk_strawmoji3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="딸기 모히또"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_strawmoji"
+        app:layout_constraintVertical_bias="0.509" />
 
-        <TextView
-            android:id="@+id/chk_strawmoji3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="딸기 모히또"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.236"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_strawmoji"
-            app:layout_constraintVertical_bias="0.509" />
+    <ImageButton
+        android:id="@+id/chk_pear"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="44dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textwithfamily3"
+        app:srcCompat="@drawable/pearcocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_pear"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="44dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textwithfamily3"
-            app:srcCompat="@drawable/pearcocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <ImageButton
+        android:id="@+id/chk_water"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/chk_pear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textwithfamily3"
+        app:srcCompat="@drawable/watercocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_water"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toStartOf="@+id/chk_pear"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textwithfamily3"
-            app:srcCompat="@drawable/watercocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <TextView
+        android:id="@+id/chk_straw4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="스트로베리 진 스메시"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.841"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_straw"
+        app:layout_constraintVertical_bias="0.507" />
 
-        <TextView
-            android:id="@+id/chk_straw4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="스트로베리 진 스메시"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.841"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_straw"
-            app:layout_constraintVertical_bias="0.507" />
+    <ImageButton
+        android:id="@+id/chk_strawmoji"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="40dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chk_straw"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_water"
+        app:layout_constraintVertical_bias="0.487"
+        app:srcCompat="@drawable/strawberry"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_strawmoji"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginStart="40dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/chk_straw"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_water"
-            app:layout_constraintVertical_bias="0.487"
-            app:srcCompat="@drawable/strawberry"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btn_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            android:src="@drawable/ic_baseline_home_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/btn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

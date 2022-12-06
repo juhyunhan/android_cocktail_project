@@ -1,156 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".exoticFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textexotic4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="#이색적인"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textexotic4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            android:text="#이색적인"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/chk_old"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="40dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chk_sexonthe"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_water"
+        app:srcCompat="@drawable/oldcocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_old"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginStart="40dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/chk_sexonthe"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_water"
-            app:srcCompat="@drawable/oldcocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <ImageButton
+        android:id="@+id/chk_bloody"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FDFCFC"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/chk_water"
+        app:layout_constraintTop_toBottomOf="@+id/textexotic4"
+        app:srcCompat="@drawable/bloodycocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_bloody"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="40dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FDFCFC"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/chk_water"
-            app:layout_constraintTop_toBottomOf="@+id/textexotic4"
-            app:srcCompat="@drawable/bloodycocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <TextView
+        android:id="@+id/chk_bloody4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="블러디 마리"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/chk_sexonthe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_bloody"
+        app:layout_constraintVertical_bias="0.524" />
 
-        <TextView
-            android:id="@+id/chk_bloody4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="블러디 마리"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/chk_sexonthe"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.769"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_bloody"
-            app:layout_constraintVertical_bias="0.524" />
+    <TextView
+        android:id="@+id/chk_old4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="올드 패션드"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_old"
+        app:layout_constraintVertical_bias="0.508" />
 
-        <TextView
-            android:id="@+id/chk_old4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="올드 패션드"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.252"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_old"
-            app:layout_constraintVertical_bias="0.508" />
+    <ImageButton
+        android:id="@+id/chk_water"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textexotic4"
+        app:srcCompat="@drawable/watercocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_water"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textexotic4"
-            app:srcCompat="@drawable/watercocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <TextView
+        android:id="@+id/chk_sexonthe4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="섹스 온 더 비치"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_sexonthe"
+        app:layout_constraintVertical_bias="0.508" />
 
-        <TextView
-            android:id="@+id/chk_sexonthe4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="섹스 온 더 비치"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.82"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_sexonthe"
-            app:layout_constraintVertical_bias="0.508" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="워터멜론마틴"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/chk_old"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_water"
+        app:layout_constraintVertical_bias="0.524" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="워터멜론마틴"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/chk_old"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.217"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_water"
-            app:layout_constraintVertical_bias="0.524" />
+    <ImageButton
+        android:id="@+id/chk_sexonthe"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginEnd="40dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_bloody"
+        app:srcCompat="@drawable/sexoncocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_sexonthe"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginEnd="40dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_bloody"
-            app:srcCompat="@drawable/sexoncocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/btn_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            android:src="@drawable/ic_baseline_home_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/btn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,6 +46,7 @@ class Adapter(val nameArray: ArrayList<Item>): RecyclerView.Adapter<Adapter.View
                     val myShadow = MyDragShadowBuilder(this)
 
                     // Start the drag.
+                    // Drag Event 발생, Data를 넘김
                     v.startDragAndDrop(dragData,  // The data to be dragged
                         myShadow,  // The drag shadow builder
                         null,      // No need to use local data

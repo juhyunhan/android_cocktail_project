@@ -1,154 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".withloverFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/chk_strawmoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="블루 하와이"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_blueHawaii" />
 
-        <TextView
-            android:id="@+id/chk_strawmoji"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="블루 하와이"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.232"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_blueHawaii" />
+    <TextView
+        android:id="@+id/chk_straw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="미도리 샤워"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.766"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_midori"
+        app:layout_constraintVertical_bias="0.508" />
 
-        <TextView
-            android:id="@+id/chk_straw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="미도리 샤워"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.766"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_midori"
-            app:layout_constraintVertical_bias="0.508" />
+    <TextView
+        android:id="@+id/text_mojito"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:text="모히또"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/chk_blueHawaii"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_mojito" />
 
-        <TextView
-            android:id="@+id/text_mojito"
-            android:layout_width="wrap_content"
-            android:layout_height="26dp"
-            android:text="모히또"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/chk_blueHawaii"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.273"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_mojito" />
+    <TextView
+        android:id="@+id/chk_apple3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="애플마티니"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/chk_midori"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_apple" />
 
-        <TextView
-            android:id="@+id/chk_apple3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="애플마티니"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/chk_midori"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.769"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_apple" />
+    <ImageButton
+        android:id="@+id/chk_apple"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textwithlvoer3"
+        app:srcCompat="@drawable/applecocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_apple"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="40dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textwithlvoer3"
-            app:srcCompat="@drawable/applecocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <ImageButton
+        android:id="@+id/chk_blueHawaii"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="40dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chk_midori"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_mojito"
+        app:layout_constraintVertical_bias="0.509"
+        app:srcCompat="@drawable/bluecocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_blueHawaii"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginStart="40dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/chk_midori"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_mojito"
-            app:layout_constraintVertical_bias="0.509"
-            app:srcCompat="@drawable/bluecocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <TextView
+        android:id="@+id/textwithlvoer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="#연인과 함께"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textwithlvoer3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            android:text="#연인과 함께"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/chk_midori"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginEnd="40dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_apple"
+        app:layout_constraintVertical_bias="0.511"
+        app:srcCompat="@drawable/midoricocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_midori"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginEnd="40dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_apple"
-            app:layout_constraintVertical_bias="0.511"
-            app:srcCompat="@drawable/midoricocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <ImageButton
+        android:id="@+id/chk_mojito"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/chk_apple"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textwithlvoer3"
+        app:srcCompat="@drawable/cocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_mojito"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toStartOf="@+id/chk_apple"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textwithlvoer3"
-            app:srcCompat="@drawable/cocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/btn_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            android:src="@drawable/ic_baseline_home_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/btn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

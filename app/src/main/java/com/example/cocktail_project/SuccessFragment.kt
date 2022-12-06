@@ -38,7 +38,7 @@ class SuccessFragment : Fragment() {
             .into(final_img)
 
         val final_text = root_view.findViewById<TextView>(R.id.tasty_content)
-        final_text.setText(result.get(0))
+        final_text.setText(result.get(0)) //칵테일 이름
 
         return root_view
     }

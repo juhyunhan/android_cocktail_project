@@ -1,153 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".withfriendFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textwitfriend2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            android:text="#친구와 함께"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textwitfriend2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="#친구와 함께"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/chk_margarita"
-            android:layout_width="170dp"
-            android:layout_height="190dp"
-            android:layout_marginEnd="32dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_pupple"
-            app:srcCompat="@drawable/margaritar"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <ImageButton
+        android:id="@+id/chk_margarita"
+        android:layout_width="170dp"
+        android:layout_height="190dp"
+        android:layout_marginEnd="32dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_pupple"
+        app:srcCompat="@drawable/margaritar"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <TextView
-            android:id="@+id/chk_margarita2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="데킬라 선라이즈"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/chk_margarita"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.807"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_pupple"
-            app:layout_constraintVertical_bias="0.508" />
+    <TextView
+        android:id="@+id/chk_margarita2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="퍼플레인"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/chk_margarita"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.807"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_pupple"
+        app:layout_constraintVertical_bias="0.508" />
 
-        <ImageButton
-            android:id="@+id/chk_pupple"
-            android:layout_width="170dp"
-            android:layout_height="190dp"
-            android:layout_marginTop="28dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toStartOf="@+id/chk_sunrise"
-            app:layout_constraintHorizontal_bias="0.825"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textwitfriend2"
-            app:srcCompat="@drawable/pupplecocktail"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+    <ImageButton
+        android:id="@+id/chk_pupple"
+        android:layout_width="170dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="28dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/chk_sunrise"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textwitfriend2"
+        app:srcCompat="@drawable/sunrisecocktail"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-        <TextView
-            android:id="@+id/chk_pupple2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="마가리타"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.738"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_margarita"
-            app:layout_constraintVertical_bias="0.408" />
+    <TextView
+        android:id="@+id/chk_pupple2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="마가리타"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.738"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_margarita"
+        app:layout_constraintVertical_bias="0.408" />
 
-        <TextView
-            android:id="@+id/chk_sunrise2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="레몬 사와"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.256"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_lemon"
-            app:layout_constraintVertical_bias="0.408" />
+    <TextView
+        android:id="@+id/chk_sunrise2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="레몬 사와"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_lemon"
+        app:layout_constraintVertical_bias="0.408" />
 
-        <ImageButton
-            android:id="@+id/chk_lemon"
-            android:layout_width="170dp"
-            android:layout_height="190dp"
-            android:layout_marginStart="40dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/chk_margarita"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_sunrise"
-            app:srcCompat="@drawable/lemoncocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <ImageButton
+        android:id="@+id/chk_lemon"
+        android:layout_width="170dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="40dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chk_margarita"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_sunrise"
+        app:srcCompat="@drawable/lemoncocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/chk_sunrise"
-            android:layout_width="170dp"
-            android:layout_height="190dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="28dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#FFFFFF"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textwitfriend2"
-            app:srcCompat="@drawable/sunrisecocktail"
-            tools:ignore="SpeakableTextPresentCheck" />
+    <ImageButton
+        android:id="@+id/chk_sunrise"
+        android:layout_width="170dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="28dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textwitfriend2"
+        app:srcCompat="@drawable/pupplecocktail"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <TextView
-            android:id="@+id/chk_lemon3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="퍼플레인"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/chk_lemon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.217"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chk_sunrise"
-            app:layout_constraintVertical_bias="0.508" />
+    <TextView
+        android:id="@+id/chk_lemon3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="데킬라 선라이즈"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/chk_lemon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_sunrise"
+        app:layout_constraintVertical_bias="0.508" />
 
-        <ImageButton
-            android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/btn_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            android:src="@drawable/ic_baseline_home_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/btn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
