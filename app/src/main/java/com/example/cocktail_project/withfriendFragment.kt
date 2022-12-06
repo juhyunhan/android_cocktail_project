@@ -58,6 +58,12 @@ class withfriendFragment : Fragment() {
             findNavController().navigate(R.id.action_withfriendFragment_to_recipeFragment)
 
         }
+        binding?.btnHome?.setOnClickListener {
+            findNavController().navigate(R.id.action_withfriendFragment_to_startFragment)
+        }
+        binding?.btnBack?.setOnClickListener {
+            findNavController().navigate(R.id.action_withfriendFragment_to_selectFragment)
+        }
 
 
     }

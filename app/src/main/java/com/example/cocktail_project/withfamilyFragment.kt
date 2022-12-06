@@ -57,6 +57,12 @@ class withfamilyFragment : Fragment() {
             findNavController().navigate(R.id.action_withfamilyFragment_to_recipeFragment)
 
         }
+        binding?.btnHome?.setOnClickListener {
+            findNavController().navigate(R.id.action_withfamilyFragment_to_startFragment)
+        }
+        binding?.btnBack?.setOnClickListener {
+            findNavController().navigate(R.id.action_withfamilyFragment_to_selectFragment)
+        }
 
 
     }

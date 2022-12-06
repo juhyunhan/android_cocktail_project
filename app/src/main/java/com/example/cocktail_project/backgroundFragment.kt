@@ -19,6 +19,7 @@ import android.os.Looper
 import android.widget.Button
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.example.cocktail_project.databinding.FragmentBackgroundBinding
 
 
 class backgroundFragment : Fragment() {
@@ -284,5 +285,17 @@ class backgroundFragment : Fragment() {
         }
         //프래그먼트 레이아웃 확장
         return root_view
+    }
+
+    val binding : FragmentBackgroundBinding? = null
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.btnHome?.setOnClickListener {
+            findNavController().navigate(R.id.action_backgroundFragment_to_startFragment)
+        }
+        binding?.btnBack?.setOnClickListener {
+            findNavController().navigate(R.id.action_backgroundFragment_to_selectFragment)
+        }
     }
 }

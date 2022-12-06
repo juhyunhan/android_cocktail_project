@@ -10,16 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.cocktail_project.databinding.FragmentAloneBinding
 import com.example.cocktail_project.viewmodel.CocktailViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [aloneFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class aloneFragment : Fragment() {
 
     val viewModel: CocktailViewModel by activityViewModels()
@@ -58,6 +49,12 @@ class aloneFragment : Fragment() {
             viewModel.modify2()
             findNavController().navigate(R.id.action_aloneFragment_to_recipeFragment)
 
+        }
+        binding?.btnHome?.setOnClickListener {
+            findNavController().navigate(R.id.action_aloneFragment_to_startFragment)
+        }
+        binding?.btnBack?.setOnClickListener {
+            findNavController().navigate(R.id.action_aloneFragment_to_selectFragment)
         }
 
 

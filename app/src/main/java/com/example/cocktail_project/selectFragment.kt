@@ -8,11 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.cocktail_project.databinding.FragmentSelectBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AlcholFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SelectFragment : Fragment() {
 
     var binding: FragmentSelectBinding? = null
@@ -51,6 +46,10 @@ class SelectFragment : Fragment() {
         binding?.btnExotic3?.setOnClickListener {
             findNavController().navigate(R.id.action_selectFragment_to_exoticFragment)
 
+        }
+
+        binding?.btnBack?.setOnClickListener {
+            findNavController().navigate(R.id.action_selectFragment_to_startFragment)
         }
 
 

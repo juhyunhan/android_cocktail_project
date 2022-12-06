@@ -16,16 +16,6 @@ import com.example.cocktail_project.viewmodel.CocktailViewModel
 import kotlinx.android.synthetic.main.fragment_recipe.*
 import java.util.Collections.list
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RecipeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RecipeFragment : Fragment() {
 
     val viewModel: CocktailViewModel by activityViewModels()
@@ -64,7 +54,7 @@ class RecipeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.buttonStart?.setOnClickListener {
+        binding?.btnStart?.setOnClickListener {
 //            val result = "testdata"
             var cocktail_element = ArrayList<String>()
             cocktail_element.add(viewModel.a.value.toString())
@@ -76,7 +66,12 @@ class RecipeFragment : Fragment() {
             val bundle = bundleOf("testKey" to cocktail_element)
             findNavController().navigate(R.id.action_recipeFragment_to_backgroundFragment, bundle)
         }
-
+        binding?.btnHome?.setOnClickListener {
+            findNavController().navigate(R.id.action_recipeFragment_to_startFragment)
+        }
+        binding?.btnBack?.setOnClickListener {
+            findNavController().navigate(R.id.action_recipeFragment_to_selectFragment)
+        }
     }
 
 

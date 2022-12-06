@@ -12,11 +12,6 @@ import com.example.cocktail_project.databinding.FragmentBeginnerBinding
 import com.example.cocktail_project.databinding.FragmentExoticBinding
 import com.example.cocktail_project.viewmodel.CocktailViewModel
 
-/**
- * A simple [Fragment] subclass.
- * Use the [aloneFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class exoticFragment : Fragment() {
 
     val viewModel: CocktailViewModel by activityViewModels()
@@ -55,6 +50,13 @@ class exoticFragment : Fragment() {
             viewModel.modify2()
             findNavController().navigate(R.id.action_exoticFragment_to_recipeFragment)
 
+        }
+        binding?.btnHome?.setOnClickListener {
+            findNavController().navigate(R.id.action_exoticFragment_to_startFragment)
+        }
+
+        binding?.btnBack?.setOnClickListener {
+            findNavController().navigate(R.id.action_exoticFragment_to_selectFragment)
         }
 
 

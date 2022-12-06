@@ -9,29 +9,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
+import com.example.cocktail_project.databinding.FragmentFailBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    var binding : FragmentFailBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +27,21 @@ class FailFragment : Fragment() {
         }
 
         return root_view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.btnPickcocktail?.setOnClickListener {
+            findNavController().navigate(R.id.action_failFragment_to_selectFragment)
+        }
+
+        binding?.btnHome?.setOnClickListener {
+            findNavController().navigate(R.id.action_failFragment_to_startFragment)
+        }
+
+
+
+
     }
 
 }

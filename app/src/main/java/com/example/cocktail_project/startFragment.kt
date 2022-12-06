@@ -32,7 +32,7 @@ class startFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-            binding?.btnMainstart2?.setOnClickListener {
+            binding?.btnMainstart?.setOnClickListener {
             findNavController().navigate(R.id.action_startFragment_to_selectFragment)
 
        }

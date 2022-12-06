@@ -23,7 +23,7 @@
             app:srcCompat="@drawable/cocktail_title" />
 
         <Button
-            android:id="@+id/btn_mainstart2"
+            android:id="@+id/btn_mainstart"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginBottom="60dp"

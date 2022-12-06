@@ -14,11 +14,7 @@ import com.example.cocktail_project.databinding.FragmentWithfamilyBinding
 import com.example.cocktail_project.databinding.FragmentWithloverBinding
 import com.example.cocktail_project.viewmodel.CocktailViewModel
 
-/**
- * A simple [Fragment] subclass.
- * Use the [aloneFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class withloverFragment : Fragment() {
     val viewModel: CocktailViewModel by activityViewModels()
     var binding: FragmentWithloverBinding? = null
@@ -56,6 +52,12 @@ class withloverFragment : Fragment() {
             viewModel.modify2()
             findNavController().navigate(R.id.action_withloverFragment_to_recipeFragment)
 
+        }
+        binding?.btnHome?.setOnClickListener {
+            findNavController().navigate(R.id.action_withloverFragment_to_startFragment)
+        }
+        binding?.btnBack?.setOnClickListener {
+            findNavController().navigate(R.id.action_withloverFragment_to_selectFragment)
         }
 
 

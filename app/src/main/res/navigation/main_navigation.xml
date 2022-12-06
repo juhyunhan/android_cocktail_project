@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_selectFragment_to_withfriendFragment"
             app:destination="@id/withfriendFragment" />
+        <action
+            android:id="@+id/action_selectFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/aloneFragment"
@@ -47,6 +50,12 @@
         <action
             android:id="@+id/action_aloneFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
+        <action
+            android:id="@+id/action_aloneFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
+        <action
+            android:id="@+id/action_aloneFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/beginnerFragment"
@@ -56,6 +65,12 @@
         <action
             android:id="@+id/action_beginnerFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
+        <action
+            android:id="@+id/action_beginnerFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
+        <action
+            android:id="@+id/action_beginnerFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/exoticFragment"
@@ -65,6 +80,12 @@
         <action
             android:id="@+id/action_exoticFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
+        <action
+            android:id="@+id/action_exoticFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
+        <action
+            android:id="@+id/action_exoticFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/withfamilyFragment"
@@ -74,6 +95,12 @@
         <action
             android:id="@+id/action_withfamilyFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
+        <action
+            android:id="@+id/action_withfamilyFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
+        <action
+            android:id="@+id/action_withfamilyFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/withfriendFragment"
@@ -83,6 +110,12 @@
         <action
             android:id="@+id/action_withfriendFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
+        <action
+            android:id="@+id/action_withfriendFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
+        <action
+            android:id="@+id/action_withfriendFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/withloverFragment"
@@ -92,6 +125,12 @@
         <action
             android:id="@+id/action_withloverFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
+        <action
+            android:id="@+id/action_withloverFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
+        <action
+            android:id="@+id/action_withloverFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/recipeFragment"
@@ -101,12 +140,40 @@
         <action
             android:id="@+id/action_recipeFragment_to_backgroundFragment"
             app:destination="@id/backgroundFragment" />
+        <action
+            android:id="@+id/action_recipeFragment_to_withloverFragment"
+            app:destination="@id/withloverFragment" />
+        <action
+            android:id="@+id/action_recipeFragment_to_withfriendFragment"
+            app:destination="@id/withfriendFragment" />
+        <action
+            android:id="@+id/action_recipeFragment_to_withfamilyFragment"
+            app:destination="@id/withfamilyFragment" />
+        <action
+            android:id="@+id/action_recipeFragment_to_exoticFragment"
+            app:destination="@id/exoticFragment" />
+        <action
+            android:id="@+id/action_recipeFragment_to_beginnerFragment"
+            app:destination="@id/beginnerFragment" />
+        <action
+            android:id="@+id/action_recipeFragment_to_aloneFragment"
+            app:destination="@id/aloneFragment" />
+        <action
+            android:id="@+id/action_recipeFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_recipeFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
     </fragment>
     <fragment
         android:id="@+id/successFragment"
         android:name="com.example.cocktail_project.SuccessFragment"
         android:label="successFragment"
-        tools:layout="@layout/fragment_success" />
+        tools:layout="@layout/fragment_success" >
+        <action
+            android:id="@+id/action_successFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
     <fragment
         android:id="@+id/shakeFragment"
         android:name="com.example.cocktail_project.ShakeFragment"
@@ -118,6 +185,9 @@
         <action
             android:id="@+id/action_shakeFragment_to_successFragment"
             app:destination="@id/successFragment" />
+        <action
+            android:id="@+id/action_shakeFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
 
     <fragment
@@ -128,6 +198,9 @@
         <action
             android:id="@+id/action_failFragment_to_selectFragment"
             app:destination="@id/selectFragment" />
+        <action
+            android:id="@+id/action_failFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/backgroundFragment"
@@ -136,6 +209,12 @@
         <action
             android:id="@+id/action_backgroundFragment_to_shakeFragment"
             app:destination="@id/shakeFragment" />
+        <action
+            android:id="@+id/action_backgroundFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_backgroundFragment_to_selectFragment"
+            app:destination="@id/selectFragment" />
     </fragment>
 </navigation>
 

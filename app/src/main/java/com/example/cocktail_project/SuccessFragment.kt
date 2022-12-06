@@ -9,22 +9,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.cocktail_project.databinding.FragmentSuccessBinding
 import kotlinx.android.synthetic.main.fragment_recipe.*
 import kotlinx.android.synthetic.main.fragment_success.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SuccessFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SuccessFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+    val binding : FragmentSuccessBinding? = null
     lateinit var result : ArrayList<String>
 
 
@@ -49,5 +41,13 @@ class SuccessFragment : Fragment() {
         final_text.setText(result.get(0))
 
         return root_view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.btnLastHome?.setOnClickListener {
+            findNavController().navigate(R.id.action_successFragment_to_startFragment)
+        }
+
     }
 }
