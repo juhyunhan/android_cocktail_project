@@ -26,7 +26,7 @@
             android:id="@+id/chk_margarita"
             android:layout_width="170dp"
             android:layout_height="190dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="32dp"
             android:adjustViewBounds="true"
             android:backgroundTint="#FFFFFF"
             android:scaleType="fitCenter"
@@ -40,11 +40,11 @@
             android:id="@+id/chk_margarita2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="마가리타"
+            android:text="데킬라 선라이즈"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/chk_margarita"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.735"
+            app:layout_constraintHorizontal_bias="0.807"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chk_pupple"
             app:layout_constraintVertical_bias="0.508" />
@@ -53,15 +53,14 @@
             android:id="@+id/chk_pupple"
             android:layout_width="170dp"
             android:layout_height="190dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginTop="28dp"
             android:adjustViewBounds="true"
             android:backgroundTint="#FFFFFF"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chk_sunrise"
+            app:layout_constraintHorizontal_bias="0.825"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textwitfriend2"
-            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/pupplecocktail"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
@@ -69,27 +68,27 @@
             android:id="@+id/chk_pupple2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="퍼플레인"
+            android:text="마가리타"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.733"
+            app:layout_constraintHorizontal_bias="0.738"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chk_margarita"
-            app:layout_constraintVertical_bias="0.492" />
+            app:layout_constraintVertical_bias="0.408" />
 
         <TextView
             android:id="@+id/chk_sunrise2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="데킬라 선라이즈"
+            android:text="레몬 사와"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.225"
+            app:layout_constraintHorizontal_bias="0.256"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chk_lemon"
-            app:layout_constraintVertical_bias="0.492" />
+            app:layout_constraintVertical_bias="0.408" />
 
         <ImageButton
             android:id="@+id/chk_lemon"
@@ -110,14 +109,12 @@
             android:id="@+id/chk_sunrise"
             android:layout_width="170dp"
             android:layout_height="190dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="28dp"
             android:adjustViewBounds="true"
             android:backgroundTint="#FFFFFF"
             android:scaleType="fitCenter"
-            app:layout_constraintEnd_toStartOf="@+id/chk_pupple"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textwitfriend2"
             app:srcCompat="@drawable/sunrisecocktail"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -126,14 +123,14 @@
             android:id="@+id/chk_lemon3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="레몬사와"
+            android:text="퍼플레인"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/chk_lemon"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.275"
+            app:layout_constraintHorizontal_bias="0.217"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chk_sunrise"
-            app:layout_constraintVertical_bias="0.507" />
+            app:layout_constraintVertical_bias="0.508" />
 
         <ImageButton
             android:id="@+id/btn_back"
