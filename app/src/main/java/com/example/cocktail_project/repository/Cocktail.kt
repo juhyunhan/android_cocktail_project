@@ -7,9 +7,10 @@ class Cocktail (
     var b: String = "h",
     var c: String = "j",
     var d: String? = null,
-    var profile: String? = null
+    var profile: String? = null,
+    var comment: String? = null
 
-    ){
+){
     fun aa(): String {
         return a
     }
@@ -27,6 +28,9 @@ class Cocktail (
     }
     fun pp(): String? {
         return profile
+    }
+    fun oo(): String? {
+        return comment
     }
 
 

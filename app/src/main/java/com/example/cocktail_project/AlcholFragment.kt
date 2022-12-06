@@ -38,71 +38,7 @@ class AlcholFragment : Fragment() {
 
 
         return _binding?.root
-        /*var card_view = root_view.findViewById<CardView>(R.id.alchol_cardview_1)
-//        for card in car_views:
-//            card.apply{
-//
-//                ...
-//            }
-        card_view.apply{
-            setOnLongClickListener { v ->
-                // Create a new ClipData.
-                // This is done in two steps to provide clarity. The convenience method
-                // ClipData.newPlainText() can create a plain text ClipData in one step.
 
-                // Create a new ClipData.Item from the ImageView object's tag.
-                val item = ClipData.Item(v.tag as? CharSequence)
-
-                // Create a new ClipData using the tag as a label, the plain text MIME type, and
-                // the already-created item. This creates a new ClipDescription object within the
-                // ClipData and sets its MIME type to "text/plain".
-                val dragData = ClipData(
-                    v.tag as? CharSequence,
-                    arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN),
-                    item)
-
-                // Instantiate the drag shadow builder.
-                val myShadow = MyDragShadowBuilder(this)
-
-                // Start the drag.
-                v.startDragAndDrop(dragData,  // The data to be dragged
-                    myShadow,  // The drag shadow builder
-                    null,      // No need to use local data
-                    0          // Flags (not currently used, set to 0)
-                )
-
-                // Indicate that the long-click was handled.
-                true
-            }
-
-        }
-        // Inflate the layout for this fragment
-
-        /*val database = Firebase.database
-        val myRef = database.getReference("base")
-        //var base: String = "aa"
-
-        val postListener = object : ValueEventListener {
-            //private lateinit var textView: TextView
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // Get Post object and use the values to update the UI
-
-                val base = dataSnapshot.getValue<String>()!!
-                Glide.with(this@AlcholFragment)
-                    .load(base)
-                    .into(b1)
-
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Getting Post failed, log a message
-
-            }
-        }
-        myRef.addValueEventListener(postListener)*/
-
-        return root_view
-    }*/
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

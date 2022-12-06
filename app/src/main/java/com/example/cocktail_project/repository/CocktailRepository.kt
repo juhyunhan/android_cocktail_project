@@ -19,7 +19,7 @@ class CocktailRepository {
     fun postCocktail(newvalue :String){
         naname = newvalue
     }
-    fun observeCocktail(name: MutableLiveData<String>,a: MutableLiveData<String>,b: MutableLiveData<String>,c: MutableLiveData<String>,d: MutableLiveData<String>,p: MutableLiveData<String>){
+    fun observeCocktail(name: MutableLiveData<String>,a: MutableLiveData<String>,b: MutableLiveData<String>,c: MutableLiveData<String>,d: MutableLiveData<String>,p: MutableLiveData<String>,o: MutableLiveData<String>){
         cockRef.child(naname).addValueEventListener(object : ValueEventListener {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -31,6 +31,8 @@ class CocktailRepository {
                 c.postValue(cocktai.cc())
                 d.postValue(cocktai.dd())
                 p.postValue(cocktai.pp())
+                o.postValue(cocktai.oo())
+
 
 
 

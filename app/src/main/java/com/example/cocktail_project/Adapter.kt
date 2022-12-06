@@ -25,35 +25,33 @@ class Adapter(val nameArray: ArrayList<Item>): RecyclerView.Adapter<Adapter.View
                 .into(binding.drinkimage)
             binding.drinkname.text = item.name
 
+            //리사이클러뷰에 리니어뷰를 드래그 하도록 할 것
             binding.itemCard.apply{
-                setOnLongClickListener { v ->
-                    // Create a new ClipData.
-                    // This is done in two steps to provide clarity. The convenience method
-                    // ClipData.newPlainText() can create a plain text ClipData in one step.
-
-                    // Create a new ClipData.Item from the ImageView object's tag.
+                setOnLongClickListener { v -> //길게 누르기
+                    // 새로운 클립 데이터 만들기
+                    // ImageView 객체의 태그에서 새로운 ClipData.Item을 생성
                     val item = ClipData.Item(binding.drinkname.text)
 
-                    // Create a new ClipData using the tag as a label, the plain text MIME type, and
-                    // the already-created item. This creates a new ClipDescription object within the
-                    // ClipData and sets its MIME type to "text/plain".
+
+
                     val dragData = ClipData(
                         binding.drinkname.text,
                         arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN),
-                        item)
+                        item) // 새 글립 디크립션 객체 생성
 
-                    // Instantiate the drag shadow builder.
+
+                    //그림자 생성
                     val myShadow = MyDragShadowBuilder(this)
 
-                    // Start the drag.
+                    // 드래그 시작
                     // Drag Event 발생, Data를 넘김
-                    v.startDragAndDrop(dragData,  // The data to be dragged
-                        myShadow,  // The drag shadow builder
-                        null,      // No need to use local data
-                        0          // Flags (not currently used, set to 0)
+                    v.startDragAndDrop(dragData,  // 드래그 시작
+                        myShadow,  // 그림자 만들기
+                        null,
+                        0
                     )
 
-                    // Indicate that the long-click was handled.
+                    // 롱 클릭 처리
                     true
                 }
             }

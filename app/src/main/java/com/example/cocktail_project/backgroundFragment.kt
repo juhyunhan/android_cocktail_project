@@ -17,9 +17,12 @@ import kotlinx.android.synthetic.main.fragment_background.*
 import android.os.Handler
 import android.os.Looper
 import android.widget.Button
+import android.widget.TextView
 import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.cocktail_project.databinding.FragmentBackgroundBinding
+import com.example.cocktail_project.viewmodel.CocktailViewModel
 
 
 class backgroundFragment : Fragment() {
@@ -29,6 +32,14 @@ class backgroundFragment : Fragment() {
     lateinit var garnishFragment: GarnishFragment
     lateinit var result : ArrayList<String>
     lateinit var select_elements : ArrayList<String>
+    val viewModel: CocktailViewModel by activityViewModels()
+    var name : TextView? = null
+    var recipe1 : TextView? = null
+    var recipe2 : TextView? = null
+    var recipe3 : TextView? = null
+    var recipe4 : TextView? = null
+
+
     //힌트 기능 구현
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,48 +56,51 @@ class backgroundFragment : Fragment() {
             Log.d("LOG", "after null clean $result")
         }
 
-//        Handler(Looper.getMainLooper()).postDelayed({
-//            recipe.visibility = View.INVISIBLE
-//            recipea.visibility = View.INVISIBLE
-//            recipeb.visibility = View.INVISIBLE
-//            recipec.visibility = View.INVISIBLE
-//            reciped.visibility = View.INVISIBLE
-//        },0L) // 처음에는 안뜨게 하기
-//
-//        Handler(Looper.getMainLooper()).postDelayed({
-//            recipe.visibility = View.VISIBLE
-//            recipea.visibility = View.VISIBLE
-//            recipeb.visibility = View.VISIBLE
-//            recipec.visibility = View.VISIBLE
-//            reciped.visibility = View.VISIBLE
-//            Handler(Looper.getMainLooper()).postDelayed({
-//                recipe.visibility = View.INVISIBLE
-//                recipea.visibility = View.INVISIBLE
-//                recipeb.visibility = View.INVISIBLE
-//                recipec.visibility = View.INVISIBLE
-//                reciped.visibility = View.INVISIBLE
-//            },2500L) // 텍스트뷰 잠시 뜨는 시간
-//        },10000L) // 지연시간
-//
-//        Handler(Looper.getMainLooper()).postDelayed({
-//            timerTxt.visibility = View.INVISIBLE
-//        },10000L)
 
-//        val countDown = object : CountDownTimer(10000, 1000) {
-//            override fun onTick(millisUntilFinished: Long) {
-//                timerTxt.setText("힌트 등장 " +millisUntilFinished / 1000 + "초 전" ).toString()
-//            }
-//            override fun onFinish() {
-//                timerTxt.setText("힌트 없음").toString()
-//                Handler(Looper.getMainLooper()).postDelayed({
-//                    timerTxt.visibility = View.VISIBLE
-//                },2500L)
-//            }
-//        }.start()
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            recipe.visibility = View.INVISIBLE
+            recipea?.visibility = View.INVISIBLE
+            recipeb?.visibility = View.INVISIBLE
+            recipec?.visibility = View.INVISIBLE
+            reciped?.visibility = View.INVISIBLE
+        },0L) // 처음에는 안뜨게 하기
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            recipe.visibility = View.VISIBLE
+            recipea?.visibility = View.VISIBLE
+            recipeb?.visibility = View.VISIBLE
+            recipec?.visibility = View.VISIBLE
+            reciped?.visibility = View.VISIBLE
+            Handler(Looper.getMainLooper()).postDelayed({
+                recipe.visibility = View.INVISIBLE
+                recipea?.visibility = View.INVISIBLE
+                recipeb?.visibility = View.INVISIBLE
+                recipec?.visibility = View.INVISIBLE
+                reciped?.visibility = View.INVISIBLE
+            },2500L) // 텍스트뷰 잠시 뜨는 시간
+        },10000L) // 지연시간
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            timerTxt.visibility = View.INVISIBLE
+        },10000L)
+        val countDown = object : CountDownTimer(10000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                timerTxt.setText("힌트 등장 " +millisUntilFinished / 1000 + "초 전" ).toString()
+            }
+            override fun onFinish() {
+                timerTxt.setText("힌트 없음").toString()
+                Handler(Looper.getMainLooper()).postDelayed({
+                    timerTxt.visibility = View.VISIBLE
+                },2500L)
+            }
+        }.start()
+
 
         alcholFragment = AlcholFragment()
         drinkFragment = DrinkFragment()
         garnishFragment = GarnishFragment()
+
     }
 
     //탭 레이아웃 구현
@@ -137,9 +151,7 @@ class backgroundFragment : Fragment() {
                 DragEvent.ACTION_DRAG_STARTED -> { //드래그 시작 (이미지를 끌었을 때)
                     // 드래그된 데이터를 accept 할 수 있는지 결정
                     if (e.clipDescription.hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
-                        //드래그 되었을 때 확인하기 위해서 넣은 배경 색
-                        //(v as? ImageView)?.setColorFilter(Color.BLUE)
-                        Toast.makeText(this.context, "ACTION STARTED", Toast.LENGTH_LONG)
+
                         // 다시 그리기 , 화면 갱신
                         v.invalidate()
 
@@ -154,8 +166,6 @@ class backgroundFragment : Fragment() {
 //                    (v as? ImageView)?.setColorFilter(Color.GREEN)
                     (v as? ImageView)?.alpha = 0.5F
 
-                    Toast.makeText(this.context, "Drag Entered", Toast.LENGTH_LONG)
-
                     // 다시 그리기
                     v.invalidate()
 
@@ -168,11 +178,8 @@ class backgroundFragment : Fragment() {
                     true
 
                 DragEvent.ACTION_DRAG_EXITED -> {
-                    //파란색으로 재설정
-                    //(v as? ImageView)?.setColorFilter(Color.BLUE)
-                    (v as? ImageView)?.alpha = 1.0F
 
-                    Toast.makeText(this.context, "Drag Exit", Toast.LENGTH_LONG)
+                    (v as? ImageView)?.alpha = 1.0F
 
                     //뷰 리셋
                     v.invalidate()
@@ -226,15 +233,6 @@ class backgroundFragment : Fragment() {
                     //리셋
                     v.invalidate()
 
-                    //getResult() 수행, 발생한 상황 표시
-//                    when(e.result) {
-//                        true ->
-//                            Toast.makeText(this.context, "The drop was handled.", Toast.LENGTH_LONG)
-//                        else ->
-//                            Toast.makeText(this.context, "The drop didn't work.", Toast.LENGTH_LONG)
-//                    }.show()
-
-                //true 반환
                     true
                 }
                 else -> {
@@ -282,6 +280,12 @@ class backgroundFragment : Fragment() {
             findNavController().navigate(R.id.action_backgroundFragment_to_shakeFragment, bundle)
 
         }
+        name = root_view.findViewById<TextView>(R.id.selcted_cocktail)
+        recipe1 = root_view.findViewById<TextView>(R.id.recipea)
+        recipe2 = root_view.findViewById<TextView>(R.id.recipeb)
+        recipe3 = root_view.findViewById<TextView>(R.id.recipec)
+        recipe4 = root_view.findViewById<TextView>(R.id.reciped)
+
         //프래그먼트 레이아웃 확장
         return root_view
     }
@@ -290,11 +294,27 @@ class backgroundFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding?.btnHome?.setOnClickListener {
             findNavController().navigate(R.id.action_backgroundFragment_to_startFragment)
         }
         binding?.btnBack?.setOnClickListener {
             findNavController().navigate(R.id.action_backgroundFragment_to_selectFragment)
+        }
+        viewModel.name.observe(viewLifecycleOwner){
+            name?.text = viewModel.name.value
+        }
+        viewModel.a.observe(viewLifecycleOwner){
+            recipe1?.text = viewModel.a.value
+        }
+        viewModel.b.observe(viewLifecycleOwner){
+            recipe2?.text = viewModel.b.value
+        }
+        viewModel.c.observe(viewLifecycleOwner){
+            recipe3?.text = viewModel.c.value
+        }
+        viewModel.d.observe(viewLifecycleOwner){
+            recipe4?.text = viewModel.d.value
         }
     }
 }

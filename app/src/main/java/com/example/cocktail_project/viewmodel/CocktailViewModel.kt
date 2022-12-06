@@ -31,9 +31,11 @@ class CocktailViewModel: ViewModel() {
     val d : LiveData<String>get() = _d
     private val _p = MutableLiveData<String>("5")
     val p : LiveData<String>get() = _p
+    private val _o = MutableLiveData<String>("6")
+    val o : LiveData<String>get() = _o
     private val repository = CocktailRepository()
     fun modify2(){
-        repository.observeCocktail(_name,_a,_b,_c,_d,_p)
+        repository.observeCocktail(_name,_a,_b,_c,_d,_p,_o)
     }
 
     private fun modify(cockname: String){

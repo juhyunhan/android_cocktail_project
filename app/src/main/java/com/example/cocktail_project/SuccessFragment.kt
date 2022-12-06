@@ -9,15 +9,18 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.cocktail_project.databinding.FragmentSuccessBinding
+import com.example.cocktail_project.viewmodel.CocktailViewModel
 import kotlinx.android.synthetic.main.fragment_recipe.*
 import kotlinx.android.synthetic.main.fragment_success.*
 
 class SuccessFragment : Fragment() {
     val binding : FragmentSuccessBinding? = null
     lateinit var result : ArrayList<String>
+    val viewModel: CocktailViewModel by activityViewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +50,9 @@ class SuccessFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.btnLastHome?.setOnClickListener {
             findNavController().navigate(R.id.action_successFragment_to_startFragment)
+        }
+        viewModel.name.observe(viewLifecycleOwner){
+            binding?.tastyContent?.text = viewModel.o.value
         }
 
     }

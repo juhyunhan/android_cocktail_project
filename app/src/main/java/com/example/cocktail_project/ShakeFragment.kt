@@ -27,18 +27,18 @@ class ShakeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val root_view = inflater.inflate(R.layout.fragment_shake, container, false)
-        var gif_show = root_view.findViewById<ImageView>(R.id.shake_view)
-        var gif_source = R.drawable.shake_sy
+        val gif_show = root_view.findViewById<ImageView>(R.id.shake_view)
+        val gif_source = R.drawable.shake_sy
         Glide.with(this)
             .load(gif_source)
             .into(gif_show)
 
-        var resultbutton = root_view.findViewById<Button>(R.id.result_btn)
+        val resultbutton = root_view.findViewById<Button>(R.id.result_btn)
         resultbutton.setOnClickListener {
-            var success = result.get(0)
+            val success = result.get(0) //t/f
             Log.d("ON SHAKE", success)
 
-            var final_result = ArrayList<String>()
+            val final_result = ArrayList<String>()
             final_result.add(result.get(1)) //name data
             final_result.add(result.get(2)) //firebase data
             val bundle = bundleOf("final" to final_result)
