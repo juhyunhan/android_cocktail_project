@@ -32,6 +32,7 @@ class backgroundFragment : Fragment() {
     lateinit var garnishFragment: GarnishFragment
     lateinit var result : ArrayList<String>
     lateinit var select_elements : ArrayList<String>
+
     val viewModel: CocktailViewModel by activityViewModels()
     var name : TextView? = null
     var recipe1 : TextView? = null
@@ -39,8 +40,6 @@ class backgroundFragment : Fragment() {
     var recipe3 : TextView? = null
     var recipe4 : TextView? = null
 
-
-    //힌트 기능 구현
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         result = arguments?.getStringArrayList("recipe2background") as ArrayList<String>
@@ -57,16 +56,16 @@ class backgroundFragment : Fragment() {
         }
 
 
-
+        //힌트 기능 구현
         Handler(Looper.getMainLooper()).postDelayed({
             recipe.visibility = View.INVISIBLE
             recipea?.visibility = View.INVISIBLE
             recipeb?.visibility = View.INVISIBLE
             recipec?.visibility = View.INVISIBLE
             reciped?.visibility = View.INVISIBLE
-        },0L) // 처음에는 안뜨게 하기
+        },0L) // 0초 뒤에 안뜨게 하기 == 처음에 안뜨기
 
-        Handler(Looper.getMainLooper()).postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({ //10초 뒤에 뷰 나타나고 2.5초 뒤에 사라짐.
             recipe.visibility = View.VISIBLE
             recipea?.visibility = View.VISIBLE
             recipeb?.visibility = View.VISIBLE
@@ -81,14 +80,15 @@ class backgroundFragment : Fragment() {
             },2500L) // 텍스트뷰 잠시 뜨는 시간
         },10000L) // 지연시간
 
-        Handler(Looper.getMainLooper()).postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({ //10 초 뒤에 뷰 삭제
             timerTxt.visibility = View.INVISIBLE
         },10000L)
-        val countDown = object : CountDownTimer(10000, 1000) {
+
+        val countDown = object : CountDownTimer(10000, 1000) { //타이머 객체 생성 10초를 1초씩
             override fun onTick(millisUntilFinished: Long) {
                 timerTxt.setText("힌트 등장 " +millisUntilFinished / 1000 + "초 전" ).toString()
             }
-            override fun onFinish() {
+            override fun onFinish() { //10초 지나고 2.5초 후에 "힌트없음" 텍스트뷰 보이기
                 timerTxt.setText("힌트 없음").toString()
                 Handler(Looper.getMainLooper()).postDelayed({
                     timerTxt.visibility = View.VISIBLE
@@ -110,13 +110,18 @@ class backgroundFragment : Fragment() {
     ): View? {
         var root_view = inflater.inflate(R.layout.fragment_background, container, false)
         var tab_layout = root_view.findViewById<TabLayout>(R.id.tab_layout)
-        parentFragmentManager.beginTransaction().replace(R.id.frame_layout, alcholFragment).commit() //첫 Fragment
+        parentFragmentManager
+            .beginTransaction()
+            .replace(R.id.frame_layout, alcholFragment)
+            .commit() //첫 화면에 alcholFragment 고정
+
+        //연동
         tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(tab: TabLayout.Tab?) {
+            override fun onTabReselected(tab: TabLayout.Tab?) { //이미 선택된 탭 다시
             }
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            override fun onTabUnselected(tab: TabLayout.Tab?) { //탭 상태 선택되지 않을 때
             }
-            override fun onTabSelected(tab: TabLayout.Tab?) {
+            override fun onTabSelected(tab: TabLayout.Tab?) { //탭 포지션 플래그먼트 설정
                 when (tab?.position) {
                     0 -> {
                         replaceView(alcholFragment)

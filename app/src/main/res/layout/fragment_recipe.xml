@@ -8,54 +8,55 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="221dp"
+        android:layout_width="205dp"
         android:layout_height="236dp"
-        android:layout_marginStart="180dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/recipe_box"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.457" />
+        app:layout_constraintVertical_bias="0.456" />
 
     <TextView
         android:id="@+id/reciped"
-        android:layout_width="195dp"
-        android:layout_height="34dp"
-        android:layout_marginEnd="24dp"
-
+        android:layout_width="200dp"
+        android:layout_height="30dp"
         android:gravity="center"
         android:text="RECIPE"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.572" />
 
     <TextView
         android:id="@+id/recipec"
-        android:layout_width="185dp"
-        android:layout_height="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
 
         android:gravity="center"
         android:text="RECIPE"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/recipeb"
-        android:layout_width="185dp"
-        android:layout_height="28dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
 
         android:gravity="center"
         android:text="RECIPE"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.429" />
 
@@ -81,22 +82,22 @@
 
     <TextView
         android:id="@+id/recipea"
-        android:layout_width="187dp"
-        android:layout_height="34dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
 
         android:gravity="center"
         android:text="RECIPE"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.351" />
 
     <Button
         android:id="@+id/btn_start"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginBottom="108dp"
         android:backgroundTint="#98CBFE"
         android:text="시작하기"
@@ -124,7 +125,7 @@
         android:id="@+id/image_cocktail"
         android:layout_width="149dp"
         android:layout_height="228dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
