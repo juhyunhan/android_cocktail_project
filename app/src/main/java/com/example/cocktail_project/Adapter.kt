@@ -28,7 +28,7 @@ class Adapter(val nameArray: ArrayList<Item>): RecyclerView.Adapter<Adapter.View
             //리사이클러뷰에 리니어뷰를 드래그 하도록 할 것
             binding.itemCard.apply{
                 setOnLongClickListener { v -> //길게 누르기
-                    // 새로운 클립 데이터 만들기
+
                     // ImageView 객체의 태그에서 새로운 ClipData.Item을 생성
                     val item = ClipData.Item(binding.drinkname.text)
 
@@ -37,7 +37,7 @@ class Adapter(val nameArray: ArrayList<Item>): RecyclerView.Adapter<Adapter.View
                     val dragData = ClipData(
                         binding.drinkname.text,
                         arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN),
-                        item) // 새 글립 디크립션 객체 생성
+                        item)
 
 
                     //그림자 생성
