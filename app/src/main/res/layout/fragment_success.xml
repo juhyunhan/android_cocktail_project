@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
-        android:text="칵테일 만들기 성공!"
+        android:text="선택한 칵테일 만들기 성공!"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,13 +33,12 @@
         android:id="@+id/tasty_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="맛 설명"
+        android:text="맛설명"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chk_pear"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintTop_toBottomOf="@+id/chk_pear" />
 
     <ImageButton
         android:id="@+id/btn_lastHome"
